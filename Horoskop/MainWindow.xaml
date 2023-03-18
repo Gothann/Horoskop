@@ -45,7 +45,7 @@
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
-                        <SkewTransform AngleX="0.111"/>
+                        <SkewTransform AngleX="0"/>
                         <RotateTransform/>
                         <TranslateTransform X="6.745"/>
                     </TransformGroup>

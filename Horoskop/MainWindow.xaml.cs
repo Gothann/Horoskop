@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Horoskop
 {
     /// <summary>
@@ -23,13 +25,19 @@ namespace Horoskop
         public MainWindow()
         {
             InitializeComponent();
-        }
-        private void MyDatePicker_SelectedDate(object sender, SelectionChangedEventArgs e) {
-           var Datauro = myDatePicker.SelectedDate.ToString();
-        }
-        private void send_Click(object sender, RoutedEventArgs e)
-        {
 
         }
+        public string b;
+       public void send_Click(object sender, RoutedEventArgs e)
+        {
+            // DateTime selectedDate = (DateTime)myDatePicker.SelectedDate;
+            //var Datauro= DateTime selectedDate;
+
+            DateTime selectedDate = (DateTime)myDatePicker.SelectedDate;
+         UstalDatę a = new UstalDatę(selectedDate);
+              b = Convert.ToString(a.GetSelectedDate());
+            MessageBox.Show(b);
+        }
+
     }
 }
