@@ -1,0 +1,59 @@
+﻿<Window x:Class="Horoskop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Horoskop"
+        mc:Ignorable="d"
+        Title="Horsokop" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="163*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="411*"/>
+            <ColumnDefinition Width="389*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF040033"/>
+                <GradientStop Color="#FFAB00FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel x:Name="datalabel" Grid.ColumnSpan="2">
+            <Label Content="Podaj date swoich urodzin" FontFamily="Kalam" HorizontalAlignment="Left" FontSize="20" Foreground="White" Height="42"/>
+            <DatePicker Height="35" Name="myDatePicker" DisplayDateEnd="12/31/2022"/>
+            
+            <Button x:Name="send" Content="Prześlij" Foreground="Black" FontFamily="Footlight MT Light" BorderBrush="White" Height="24" Width="123" Click="send_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB3B3B3"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,20,0,0" Grid.Row="1">
+            <Label x:Name="znak_today" Content="Twój dzisiejszy horsoskop!" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42"/>
+            <TextBlock x:Name="tb2dzis" TextWrapping="Wrap" Foreground="White" FontFamily="Kalam Light" FontSize="14" Height="263"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Margin="5,108,-5,0" Grid.RowSpan="2">
+            <Label x:Name="znak_Copy" Content="Specyfikacja Twojego znaku" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42"/>
+            <TextBlock x:Name="tb3spec" TextWrapping="Wrap" Foreground="White" FontFamily="Kalam Light" FontSize="14" RenderTransformOrigin="0.455,0.472" Height="276" Width="370" HorizontalAlignment="Left">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="6.745"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </StackPanel>
+        <Label x:Name="znak" Grid.Column="2" Content="Twój znak Zodiaku" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="389" Foreground="White" FontFamily="Kalam Light" FontSize="14"/>
+
+    </Grid>
+</Window>
