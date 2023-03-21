@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Horoskop"
         mc:Ignorable="d"
-        Title="Horsokop" Height="450" Width="800">
+        Title="Horsokop" Height="600" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="54*"/>
@@ -14,7 +14,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="411*"/>
-            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition Width="358*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="31*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -24,8 +26,8 @@
         </Grid.Background>
         <StackPanel x:Name="datalabel" Grid.ColumnSpan="2">
             <Label Content="Podaj date swoich urodzin" FontFamily="Kalam" HorizontalAlignment="Left" FontSize="20" Foreground="White" Height="42"/>
-            <DatePicker Height="35" Name="myDatePicker" DisplayDateEnd="12/31/2022"/>
-            
+            <DatePicker Height="35" Name="myDatePicker" DisplayDateEnd="12/31/2022" Width="460"/>
+
             <Button x:Name="send" Content="Prześlij" Foreground="Black" FontFamily="Footlight MT Light" BorderBrush="White" Height="24" Width="123" Click="send_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -35,13 +37,21 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="2" Margin="0,20,0,0" Grid.Row="1">
+        <StackPanel Grid.ColumnSpan="2" Margin="0,145,0,0" Grid.RowSpan="2">
             <Label x:Name="znak_today" Content="Twój dzisiejszy horsoskop!" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42"/>
-            <TextBlock x:Name="tb2dzis" TextWrapping="Wrap" Foreground="White" FontFamily="Kalam Light" FontSize="14" Height="263"/>
+            <TextBlock x:Name="tb2dzis" TextWrapping="Wrap"  LineHeight="Auto" Foreground="White" FontFamily="Kalam Light" FontSize="16" Width="590"/>
+            <Button x:Name="Zapisz" Content="Zapisz Do pliku" Foreground="Black" FontFamily="Footlight MT Light" BorderBrush="White" Height="18" Width="98" Click="Zapisz_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB3B3B3"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </StackPanel>
-        <StackPanel Grid.Column="2" Margin="5,108,-5,0" Grid.RowSpan="2">
+        <StackPanel Grid.Column="2" Margin="5,108,-5,0" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <Label x:Name="znak_Copy" Content="Specyfikacja Twojego znaku" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42"/>
-            <TextBlock x:Name="tb3spec" TextWrapping="Wrap" Foreground="White" FontFamily="Kalam Light" FontSize="14" RenderTransformOrigin="0.455,0.472" Height="276" Width="370" HorizontalAlignment="Left">
+            <TextBlock x:Name="tb3spec" TextWrapping="Wrap"  LineHeight="Auto" Foreground="White" FontFamily="Kalam Light" FontSize="16" RenderTransformOrigin="0.455,0.472" Width="551" HorizontalAlignment="Left">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -52,8 +62,8 @@
                 </TextBlock.RenderTransform>
             </TextBlock>
         </StackPanel>
-        <Label x:Name="znak" Grid.Column="2" Content="Twój znak Zodiaku" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="389" Foreground="White" FontFamily="Kalam Light" FontSize="14"/>
+        <Label x:Name="znak" Grid.Column="2" Content="Twój znak Zodiaku" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="379" Foreground="White" FontFamily="Kalam" FontSize="20" Height="42" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="tb1zodiak" Grid.Column="2" HorizontalAlignment="Left" Margin="20,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="54" Width="338" Foreground="White" FontFamily="Kalam Light" FontSize="24" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

@@ -17,27 +17,36 @@ using System.Windows.Shapes;
 
 namespace Horoskop
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
+		public MainWindow()
+		{
+			InitializeComponent();
 
-        }
-        public string b;
-       public void send_Click(object sender, RoutedEventArgs e)
-        {
-            // DateTime selectedDate = (DateTime)myDatePicker.SelectedDate;
-            //var Datauro= DateTime selectedDate;
+		}
+		public string b;
+		public void send_Click(object sender, RoutedEventArgs e)
+		{
+			// DateTime selectedDate = (DateTime)myDatePicker.SelectedDate;
+			//var Datauro= DateTime selectedDate;
 
+			DateTime selectedDate = (DateTime)myDatePicker.SelectedDate;
+			UstalDatę a = new UstalDatę(selectedDate);
+			b = Convert.ToString(a.GetSelectedDate());
+			UstalZnak idk = new UstalZnak();
+			tb1zodiak.Text = UstalZnak.GetZodiacSign(selectedDate);
+			tb3spec.Text = UstalZnak.GetTextBasedOnZodiacSign(selectedDate);
+			tb2dzis.Text = UstalZnak.GetDaily(selectedDate);
+
+		}
+		public void Zapisz_Click(object sender, RoutedEventArgs e)
+		{
             DateTime selectedDate = (DateTime)myDatePicker.SelectedDate;
-         UstalDatę a = new UstalDatę(selectedDate);
-              b = Convert.ToString(a.GetSelectedDate());
-            MessageBox.Show(b);
-        }
+			Zapisywanie.ZapiszDoPliku(selectedDate);
 
-    }
+		}
+	}
 }
